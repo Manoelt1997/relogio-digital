@@ -1,0 +1,66 @@
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+}
+
+.relogio {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.display {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: whitesmoke;
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    line-height: 200px;
+    color: gray;
+    border-radius: 30px;
+    font-size: 3.5rem;
+    overflow: hidden;
+    font-family: 'Chivo Mono', monospace;
+    z-index: 1;
+}
+
+.display::before{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 200%;
+    background: linear-gradient(180deg, blue, gold);
+    animation: animate 3s linear infinite;
+    z-index: -2;
+}
+
+@keyframes animate {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.display::after {
+    content: '';
+    position: absolute;
+    inset: 5px; 
+    border-radius: inherit;
+    background-image: linear-gradient(to right, rgb(255, 166, 0), rgb(247, 247, 247));
+    z-index: -1;
+}
+
+footer{
+    font-size: 2rem;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+}
